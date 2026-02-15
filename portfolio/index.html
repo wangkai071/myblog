@@ -1,509 +1,340 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content=".industrial-premium { --bg: #030405; --bg-panel: #080a0d; --bg-card: #0c0e12; --bg-elevated: #101318; --border: #1a1d24; --border-bright: #252a33; --text: #e8ecf1; --text-muted: #6b7280; --accent: #">
-<meta property="og:type" content="website">
-<meta property="og:title" content="电气维保 · 技能架构师">
-<meta property="og:url" content="http://example.com/portfolio/index.html">
-<meta property="og:site_name" content="My Blog">
-<meta property="og:description" content=".industrial-premium { --bg: #030405; --bg-panel: #080a0d; --bg-card: #0c0e12; --bg-elevated: #101318; --border: #1a1d24; --border-bright: #252a33; --text: #e8ecf1; --text-muted: #6b7280; --accent: #">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-02-14T01:42:00.601Z">
-<meta property="article:modified_time" content="2026-02-14T01:42:00.601Z">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>电气维保 · 技能架构师 - My Blog</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电气维保 · 技能架构师 | 王成凯</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030405;
+      --bg-panel: #080a0d;
+      --bg-card: #0c0e12;
+      --bg-elevated: #101318;
+      --border: #1a1d24;
+      --border-bright: #252a33;
+      --text: #e8ecf1;
+      --text-muted: #6b7280;
+      --accent: #06b6d4;
+      --accent-glow: rgba(6, 182, 212, 0.25);
+      --gold: #eab308;
+      --gold-dim: #a16207;
+      --font-display: "Orbitron", "JetBrains Mono", sans-serif;
+      --font-mono: "JetBrains Mono", "Consolas", monospace;
+      --font-sans: "Noto Sans SC", "Microsoft YaHei", sans-serif;
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 3px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 3px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
 
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem 3.5rem;
+      margin-bottom: 3rem;
+      background: linear-gradient(145deg, var(--bg-panel) 0%, var(--bg-card) 100%);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.8;
+    }
+    .hero .status {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .hero .status-dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      margin: 0 0 0.5rem;
+      background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero .org {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin: 0 0 0.6rem;
+      text-transform: uppercase;
+    }
+    .hero .motto {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gold);
+      margin: 0 0 1rem;
+      letter-spacing: 0.05em;
+    }
+    .hero .tags {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
 
-  
-<meta name="generator" content="Hexo 8.1.1"></head>
+    .block {
+      margin-bottom: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .block:hover { border-color: var(--border-bright); box-shadow: 0 0 0 1px var(--border-bright); }
+    .block-head {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.35rem;
+      background: var(--bg-elevated);
+      border-bottom: 1px solid var(--border);
+    }
+    .block-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      min-width: 2.5em;
+    }
+    .block-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+    .block-body { padding: 1.35rem 1.5rem; }
+    .block-body ul { margin: 0; padding-left: 1.35rem; }
+    .block-body li { margin-bottom: 0.5rem; }
+    .block-body li strong { color: var(--gold); font-weight: 600; }
 
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .chip {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 0.85rem 1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0;
+      transition: border-left-color 0.2s, background 0.2s;
+    }
+    .chip:hover { background: var(--bg-card); border-left-color: var(--gold); }
+    .chip strong { color: var(--accent); display: block; margin-bottom: 0.35rem; letter-spacing: 0.05em; }
 
+    .row-list { list-style: none; padding: 0; margin: 0; }
+    .row-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .row-list li:last-child { border-bottom: none; }
+    .row-list .label {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      min-width: 8em;
+      letter-spacing: 0.04em;
+    }
+
+    .foot {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .foot .name { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 600; color: var(--text); letter-spacing: 0.08em; }
+    .foot .meta { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem; }
+    .foot .disclaimer { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.6rem; opacity: 0.85; }
+  </style>
+</head>
 <body>
-  
+  <div class="wrap">
+    <header class="hero">
+      <p class="status"><span class="status-dot"></span> SYSTEMS ONLINE</p>
+      <h1>电气维保 · 技能架构师</h1>
+      <p class="org">TEI 电气二部 · 驻 HNI/RNI</p>
+      <p class="motto">技术是安全之基 · 创新是增效之源</p>
+      <p class="tags">纵深防御 · 低成本高鲁棒性 · 冗余思维 · 价值共生</p>
+    </header>
 
-  <header>
-    
-
-<div class="header-inner" style="height: 60vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/" target="_self">
-                <i class="iconfont icon-home-fill"></i>
-                <span>首页</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/" target="_self">
-                <i class="iconfont icon-user-fill"></i>
-                <span>关于</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="电气维保 · 技能架构师"></span>
-          
-        </div>
-
-        
+    <section class="block">
+      <div class="block-head"><span class="block-num">01</span><span class="block-title">精益 & SCORE 融合</span></div>
+      <div class="block-body">
+        <ul>
+          <li>供电拓扑重构与垂度滑线稳定性设计</li>
+          <li>PLC 深度集成与闭环调节（秒级自启 / 反馈控制）</li>
+          <li>软硬协同纵深防御 · 单点失效冗余改造</li>
+          <li>隐患排查机制与安全培训体系构建</li>
+          <li><strong>故障率压降 60%+ · 零中断保障</strong></li>
+        </ul>
       </div>
+    </section>
 
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<article class="page-content">
-  <div class="industrial-premium">
-<style>
-.industrial-premium { --bg: #030405; --bg-panel: #080a0d; --bg-card: #0c0e12; --bg-elevated: #101318; --border: #1a1d24; --border-bright: #252a33; --text: #e8ecf1; --text-muted: #6b7280; --accent: #06b6d4; --gold: #eab308; --font-mono: "JetBrains Mono", "Consolas", monospace; --font-display: "Orbitron", "JetBrains Mono", sans-serif; background: var(--bg); color: var(--text); margin: 0 -1rem; padding: 2rem 1rem 3rem; min-height: 80vh; }
-.industrial-premium .wrap { max-width: 880px; margin: 0 auto; padding: 0; }
-.industrial-premium .hero { text-align: center; padding: 3rem 1.5rem 2.5rem; margin-bottom: 2rem; background: linear-gradient(145deg, var(--bg-panel) 0%, var(--bg-card) 100%); border: 1px solid var(--border); border-radius: 2px; position: relative; }
-.industrial-premium .hero::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.8; }
-.industrial-premium .hero .status { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; color: var(--text-muted); margin-bottom: 1rem; }
-.industrial-premium .hero .status-dot { display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-right: 0.5rem; vertical-align: middle; box-shadow: 0 0 10px var(--accent); }
-.industrial-premium .hero h1 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; letter-spacing: 0.18em; margin: 0 0 0.4rem; color: var(--text); }
-.industrial-premium .hero .org { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.15em; color: var(--accent); margin: 0 0 0.5rem; }
-.industrial-premium .hero .motto { font-size: 0.95rem; font-weight: 500; color: var(--gold); margin: 0 0 0.75rem; }
-.industrial-premium .hero .tags { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--text-muted); }
-.industrial-premium .block { margin-bottom: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; }
-.industrial-premium .block-head { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.25rem; background: var(--bg-elevated); border-bottom: 1px solid var(--border); }
-.industrial-premium .block-num { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; color: var(--accent); letter-spacing: 0.1em; min-width: 2.5em; }
-.industrial-premium .block-title { font-size: 1.05rem; font-weight: 700; color: var(--text); }
-.industrial-premium .block-body { padding: 1.25rem 1.5rem; }
-.industrial-premium .block-body ul { margin: 0; padding-left: 1.35rem; }
-.industrial-premium .block-body li { margin-bottom: 0.45rem; }
-.industrial-premium .block-body li strong { color: var(--gold); }
-.industrial-premium .grid-2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
-.industrial-premium .chip { font-family: var(--font-mono); font-size: 0.8rem; padding: 0.85rem 1rem; background: var(--bg-elevated); border: 1px solid var(--border); border-left: 3px solid var(--accent); }
-.industrial-premium .chip strong { color: var(--accent); display: block; margin-bottom: 0.35rem; }
-.industrial-premium .row-list { list-style: none; padding: 0; margin: 0; }
-.industrial-premium .row-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 0.65rem 0; border-bottom: 1px solid var(--border); }
-.industrial-premium .row-list li:last-child { border-bottom: none; }
-.industrial-premium .row-list .label { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); min-width: 8em; }
-.industrial-premium .foot { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); text-align: center; }
-.industrial-premium .foot .name { font-family: var(--font-mono); font-size: 0.9rem; font-weight: 600; color: var(--text); }
-.industrial-premium .foot .meta, .industrial-premium .foot .disclaimer { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem; }
-</style>
-<div class="wrap">
-<header class="hero">
-  <p class="status"><span class="status-dot"></span> SYSTEMS ONLINE</p>
-  <h1>电气维保 · 技能架构师</h1>
-  <p class="org">TEI 电气二部 · 驻 HNI/RNI</p>
-  <p class="motto">技术是安全之基 · 创新是增效之源</p>
-  <p class="tags">纵深防御 · 低成本高鲁棒性 · 冗余思维 · 价值共生</p>
-</header>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">01</span><span class="block-title">精益 & SCORE 融合</span></div>
-  <div class="block-body">
-    <ul>
-      <li>供电拓扑重构与垂度滑线稳定性设计</li>
-      <li>PLC 深度集成与闭环调节（秒级自启 / 反馈控制）</li>
-      <li>软硬协同纵深防御 · 单点失效冗余改造</li>
-      <li>隐患排查机制与安全培训体系构建</li>
-      <li><strong>故障率压降 60%+ · 零中断保障</strong></li>
-    </ul>
-  </div>
-</section>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">02</span><span class="block-title">技术根因分析</span></div>
-  <div class="block-body">
-    <ul>
-      <li>称重 / 计量机构设计缺陷对比与迭代</li>
-      <li>本质安全升级 · 防爆区域零停机改造</li>
-      <li>低成本自主数据采集方案（WinCC + 串口服务器）</li>
-      <li>C# 驱动私有协议解析 · .NET Framework 底层编码</li>
-      <li><strong>成本降低 80%+ · 抗干扰长距离</strong></li>
-    </ul>
-  </div>
-</section>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">03</span><span class="block-title">自动化 · 数字化</span></div>
-  <div class="block-body">
-    <ul>
-      <li>S7 直连协议 · 弃用 OPC，高时效采集</li>
-      <li>煤气数据全自动报表架构（跨系统重构）</li>
-      <li>自定义打印模板与深度数据整合</li>
-      <li>称重系统硬件冗余应急箱 · 独立于主控</li>
-      <li><strong>综合效率提升 80% · 紧急避险</strong></li>
-    </ul>
-  </div>
-</section>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">04</span><span class="block-title">工控通信与集成</span></div>
-  <div class="block-body grid-2">
-    <div class="chip"><strong>MODBUS 串行</strong>无线测温、综保、煤气报警仪混合组网</div>
-    <div class="chip"><strong>串口服务器</strong>私有协议驱动 · .NET 采集引擎</div>
-    <div class="chip"><strong>WinCC 上位机</strong>低成本监控替代专用 PLC 模块</div>
-    <div class="chip"><strong>S7 直连</strong>高性能采集，兼容 Windows 全平台</div>
-  </div>
-</section>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">05</span><span class="block-title">冗余 · 容错 · 硬接线</span></div>
-  <div class="block-body">
-    <ul class="row-list">
-      <li><span class="label">软硬协同纵深</span>硬接线后备 + 软件冗余，防通讯失效</li>
-      <li><span class="label">应急手动控制箱</span>称重系统全独立保障，避免非计划停机</li>
-      <li><span class="label">柴油泵秒级自启</span>压力骤降反馈至 PLC 闭环调速</li>
-      <li><span class="label">防爆区域升级</span>零时长停机 · 本质安全替换策略</li>
-    </ul>
-  </div>
-</section>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">06</span><span class="block-title">系统重构与杠杆</span></div>
-  <div class="block-body">
-    <ul class="row-list">
-      <li><span class="label">皮带秤机构</span>四连杆优于单托辊 · 设计迭代能力</li>
-      <li><span class="label">报表底层重构</span>吸收现役架构，设计先进采集逻辑</li>
-      <li><span class="label">U 型垂度滑线</span>电缆拉断顽疾根治 · 高稳定性方案</li>
-      <li><span class="label">无触点改造</span>行车电气、洗车机建设技术沉淀</li>
-    </ul>
-  </div>
-</section>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">07</span><span class="block-title">价值认同 · 技能传递</span></div>
-  <div class="block-body">
-    <p style="margin-top:0;"><strong>本土化技术融合</strong> · 国际视野 + 本地实践 · 桥梁型骨干孵化 · 实战项目锻打法</p>
-    <ul>
-      <li>煤气管道 / 行车无触点 · 湿矿洗车机</li>
-      <li><strong>操作标准定义者</strong> — 从“解决一个问题”到“塑造一批领军者”，将隐性知识转化为团队共性资产。</li>
-    </ul>
-  </div>
-</section>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">08</span><span class="block-title">双轮驱动 · 价值共生</span></div>
-  <div class="block-body">
-    <ul>
-      <li>中印技能融合 · 文化凝聚力工程</li>
-      <li>信念一致 · 能力互补 · 卓越维保队伍</li>
-      <li>传帮带机制 · 自主人才培养</li>
-      <li><strong>锻造未来行业标准定义者</strong> — 不仅仅维修，更定义维保范式。</li>
-    </ul>
-  </div>
-</section>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">09</span><span class="block-title">2026 技能精进 · 共同体愿景</span></div>
-  <div class="block-body">
-    <p style="margin:0;">以安全环保为底座，构建全员参与的安全共同体；实施中·印员工“价值共生”项目，在技术同频中达成文化互信。纵深推进低成本高可靠采集架构，持续探索软硬冗余的极限边缘。目标是成为兼具工程直觉与系统思维的电气维保领军者，并为组织沉淀可复用的技术框架。</p>
-  </div>
-</section>
-
-<section class="block">
-  <div class="block-head"><span class="block-num">10</span><span class="block-title">2026 展望</span></div>
-  <div class="block-body">
-    <ul>
-      <li>SCORE+ 精益深水区</li>
-      <li>硬冗余标准化</li>
-      <li>跨文化技术共识</li>
-      <li>自主诊断平台</li>
-    </ul>
-    <p style="margin-bottom:0; margin-top:0.75rem;">坚信“技术是安全之基，创新是增效之源”。持续将突破性技能沉淀为组织常态，以价值驱动定义维保新基线。</p>
-  </div>
-</section>
-
-<footer class="foot">
-  <p class="name">王成凯 · 2026.01.05</p>
-  <p class="meta">电气维保技能体系 · 纯能力架构</p>
-  <p class="disclaimer">本页无个人工作事项罗列，仅呈现能力框架与价值主张</p>
-</footer>
-</div>
-</div>
-
-
-  
-
-</article>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="block">
+      <div class="block-head"><span class="block-num">02</span><span class="block-title">技术根因分析</span></div>
+      <div class="block-body">
+        <ul>
+          <li>称重 / 计量机构设计缺陷对比与迭代</li>
+          <li>本质安全升级 · 防爆区域零停机改造</li>
+          <li>低成本自主数据采集方案（WinCC + 串口服务器）</li>
+          <li>C# 驱动私有协议解析 · .NET Framework 底层编码</li>
+          <li><strong>成本降低 80%+ · 抗干扰长距离</strong></li>
+        </ul>
       </div>
-    
+    </section>
 
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
+    <section class="block">
+      <div class="block-head"><span class="block-num">03</span><span class="block-title">自动化 · 数字化</span></div>
+      <div class="block-body">
+        <ul>
+          <li>S7 直连协议 · 弃用 OPC，高时效采集</li>
+          <li>煤气数据全自动报表架构（跨系统重构）</li>
+          <li>自定义打印模板与深度数据整合</li>
+          <li>称重系统硬件冗余应急箱 · 独立于主控</li>
+          <li><strong>综合效率提升 80% · 紧急避险</strong></li>
+        </ul>
+      </div>
+    </section>
 
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <section class="block">
+      <div class="block-head"><span class="block-num">04</span><span class="block-title">工控通信与集成</span></div>
+      <div class="block-body grid-2">
+        <div class="chip"><strong>MODBUS 串行</strong>无线测温、综保、煤气报警仪混合组网</div>
+        <div class="chip"><strong>串口服务器</strong>私有协议驱动 · .NET 采集引擎</div>
+        <div class="chip"><strong>WinCC 上位机</strong>低成本监控替代专用 PLC 模块</div>
+        <div class="chip"><strong>S7 直连</strong>高性能采集，兼容 Windows 全平台</div>
       </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
+    </section>
+
+    <section class="block">
+      <div class="block-head"><span class="block-num">05</span><span class="block-title">冗余 · 容错 · 硬接线</span></div>
+      <div class="block-body">
+        <ul class="row-list">
+          <li><span class="label">软硬协同纵深</span>硬接线后备 + 软件冗余，防通讯失效</li>
+          <li><span class="label">应急手动控制箱</span>称重系统全独立保障，避免非计划停机</li>
+          <li><span class="label">柴油泵秒级自启</span>压力骤降反馈至 PLC 闭环调速</li>
+          <li><span class="label">防爆区域升级</span>零时长停机 · 本质安全替换策略</li>
+        </ul>
       </div>
-    </div>
+    </section>
+
+    <section class="block">
+      <div class="block-head"><span class="block-num">06</span><span class="block-title">系统重构与杠杆</span></div>
+      <div class="block-body">
+        <ul class="row-list">
+          <li><span class="label">皮带秤机构</span>四连杆优于单托辊 · 设计迭代能力</li>
+          <li><span class="label">报表底层重构</span>吸收现役架构，设计先进采集逻辑</li>
+          <li><span class="label">U 型垂度滑线</span>电缆拉断顽疾根治 · 高稳定性方案</li>
+          <li><span class="label">无触点改造</span>行车电气、洗车机建设技术沉淀</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-head"><span class="block-num">07</span><span class="block-title">价值认同 · 技能传递</span></div>
+      <div class="block-body">
+        <p style="margin-top:0;"><strong>本土化技术融合</strong> · 国际视野 + 本地实践 · 桥梁型骨干孵化 · 实战项目锻打法</p>
+        <ul>
+          <li>煤气管道 / 行车无触点 · 湿矿洗车机</li>
+          <li><strong>操作标准定义者</strong> — 从“解决一个问题”到“塑造一批领军者”，将隐性知识转化为团队共性资产。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-head"><span class="block-num">08</span><span class="block-title">双轮驱动 · 价值共生</span></div>
+      <div class="block-body">
+        <ul>
+          <li>中印技能融合 · 文化凝聚力工程</li>
+          <li>信念一致 · 能力互补 · 卓越维保队伍</li>
+          <li>传帮带机制 · 自主人才培养</li>
+          <li><strong>锻造未来行业标准定义者</strong> — 不仅仅维修，更定义维保范式。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-head"><span class="block-num">09</span><span class="block-title">2026 技能精进 · 共同体愿景</span></div>
+      <div class="block-body">
+        <p style="margin:0;">以安全环保为底座，构建全员参与的安全共同体；实施中·印员工“价值共生”项目，在技术同频中达成文化互信。纵深推进低成本高可靠采集架构，持续探索软硬冗余的极限边缘。目标是成为兼具工程直觉与系统思维的电气维保领军者，并为组织沉淀可复用的技术框架。</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="block-head"><span class="block-num">10</span><span class="block-title">2026 展望</span></div>
+      <div class="block-body">
+        <ul>
+          <li>SCORE+ 精益深水区</li>
+          <li>硬冗余标准化</li>
+          <li>跨文化技术共识</li>
+          <li>自主诊断平台</li>
+        </ul>
+        <p style="margin-bottom:0; margin-top:0.75rem;">坚信“技术是安全之基，创新是增效之源”。持续将突破性技能沉淀为组织常态，以价值驱动定义维保新基线。</p>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p class="name">王成凯 · 2026.01.05</p>
+      <p class="meta">电气维保技能体系 · 纯能力架构</p>
+      <p class="disclaimer">本页无个人工作事项罗列，仅呈现能力框架与价值主张</p>
+    </footer>
   </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
 </body>
 </html>
