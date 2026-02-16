@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <title>王成凯 · 电气维保技能展</title>
+    <!-- 干净、工业风，聚焦技能体系与工程思维，完全去个人事迹化 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #0b2a35 0%, #0e1f26 100%);
+            font-family: 'Inter', 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #e3edf2;
+            line-height: 1.55;
+        }
+
+        .skill-portfolio {
+            max-width: 1300px;
+            width: 100%;
+            background: rgba(18, 32, 38, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid #3c6e7a;
+            box-shadow: 0 25px 40px -10px rgba(0,0,0,0.5);
+            border-radius: 36px;
+            padding: 2.8rem 2.5rem;
+            transition: all 0.2s;
+        }
+
+        /* 头部区域——只保留角色定位与技能信条 */
+        .header {
+            border-bottom: 2px solid #40a0b0;
+            padding-bottom: 1.8rem;
+            margin-bottom: 2.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .title-section h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #c6f0f5;
+            text-shadow: 0 2px 5px rgba(0,180,200,0.2);
+            margin-bottom: 0.4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #2c6e7c;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #edfffc;
+            border: 1px solid #6dcad9;
+            box-shadow: inset 0 0 3px #a4ecf0;
+            margin-top: 0.3rem;
+        }
+
+        .ethos {
+            text-align: right;
+            font-style: italic;
+            border-left: 3px solid #40a0b0;
+            padding-left: 1.8rem;
+        }
+
+        .ethos p {
+            font-size: 1.2rem;
+            font-weight: 350;
+            color: #bfe6ec;
+        }
+
+        .ethos span {
+            font-weight: 600;
+            color: #9fe7f0;
+            letter-spacing: 0.5px;
+        }
+
+        /* 技能架构——完全抽象掉个人项目，只呈现技术能力与工程思维 */
+        .skill-architecture {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .skill-domain {
+            background: rgba(13, 27, 31, 0.7);
+            border-radius: 28px;
+            padding: 1.8rem 1.8rem;
+            border: 1px solid #326268;
+            transition: transform 0.15s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .skill-domain:hover {
+            border-color: #6ecfdd;
+            background: rgba(18, 44, 48, 0.8);
+            box-shadow: 0 8px 0 #1e4a52;
+        }
+
+        .domain-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            background: #1c474e;
+            padding: 0.3rem 0.7rem;
+            border-radius: 60px;
+            border: 1px solid #59b2c0;
+        }
+
+        .domain-title {
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #b3edf5;
+            margin: 0.7rem 0 1rem 0;
+            border-bottom: 1px dashed #479ba7;
+            padding-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 0.9rem;
+            position: relative;
+            font-size: 1.05rem;
+            font-weight: 380;
+            color: #d2ecf0;
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            position: absolute;
+            left: -2px;
+            color: #60cad8;
+            font-weight: 700;
+        }
+
+        .highlight-tag {
+            display: inline-block;
+            background: #1f535c;
+            border-radius: 16px;
+            padding: 0.2rem 0.9rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #caf0fc;
+            border: 1px solid #86ceda;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+            letter-spacing: 0.3px;
+        }
+
+        /* 技术纵深体系 —— 完全以“能力域”呈现，无任何个人项目描述 */
+        .competency-deep {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+            background: #0c262c;
+            padding: 2rem 2rem;
+            border-radius: 28px;
+            border: 1px solid #2e727c;
+        }
+
+        .competency-col {
+            flex: 1 1 280px;
+        }
+
+        .competency-col h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #b2f0f7;
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sig-bar {
+            width: 6px;
+            height: 26px;
+            background: #3ebac6;
+            display: inline-block;
+            border-radius: 6px;
+        }
+
+        .compact-skill-item {
+            display: flex;
+            margin-bottom: 1.2rem;
+            align-items: baseline;
+        }
+
+        .skill-meta {
+            font-weight: 500;
+            color: #a1dae3;
+            min-width: 120px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .skill-desc {
+            color: #d3f1f5;
+            font-weight: 350;
+            line-height: 1.5;
+        }
+
+        /* 人才与团队理念 —— 抽象为技能传承力 */
+        .value-drivers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2.2rem 0 2rem;
+        }
+
+        .driver-card {
+            background: #102f35;
+            padding: 1.5rem 2rem;
+            border-radius: 24px;
+            border: 1px solid #36838e;
+        }
+
+        .driver-card h4 {
+            font-size: 1.4rem;
+            color: #b6f0f7;
+            margin-bottom: 1.2rem;
+            font-weight: 520;
+        }
+
+        .driver-taglist {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 1rem;
+        }
+
+        .driver-tag {
+            background: #1c4d55;
+            padding: 0.4rem 1.1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #dcf7fc;
+            border: 1px solid #61bbc9;
+        }
+
+        /* 2026 规划 —— 彻底去掉具体工作，只有技能精进方向 */
+        .vision-section {
+            margin-top: 2.8rem;
+            border-top: 2px solid #2b7f8c;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .vision-block {
+            max-width: 70%;
+        }
+
+        .vision-block h2 {
+            font-size: 1.7rem;
+            font-weight: 550;
+            color: #c6f7ff;
+            margin-bottom: 0.9rem;
+        }
+
+        .vision-block p {
+            font-size: 1.08rem;
+            color: #c4e6ec;
+            font-weight: 330;
+        }
+
+        .signature {
+            font-size: 1.2rem;
+            font-weight: 350;
+            color: #87ceda;
+            border-top: 1px solid #2d7882;
+            margin-top: 2.2rem;
+            padding-top: 1.8rem;
+            text-align: right;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .signature span {
+            font-weight: 600;
+            color: #bceff5;
+        }
+
+        /* 极简响应 */
+        @media (max-width: 750px) {
+            .skill-portfolio { padding: 1.8rem 1.5rem; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .ethos { text-align: left; border-left: none; border-top: 2px solid #40a0b0; padding-left: 0; padding-top: 1rem; margin-top: 1rem; width: 100%; }
+            .title-section h1 { font-size: 2rem; }
+            .value-drivers { grid-template-columns: 1fr; }
+            .vision-block { max-width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 0.8rem; }
+            .skill-portfolio { padding: 1.5rem 1rem; }
+        }
+
+        .note-404 {
+            color: #75b7c0;
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+            border-top: 0.5px dashed #3f808b;
+            padding-top: 0.8rem;
+            opacity: 0.8;
+        }
+        /* 无任何个人业绩描述，纯技能框架 */
+        a, .fake-link {
+            color: #9de0e8;
+            text-decoration: none;
+            border-bottom: 1px dotted #479caa;
+        }
+    </style>
+</head>
+<body>
+    <div class="skill-portfolio">
+        <!-- 头部：完全剥离具体工作，只保留岗位身份与技术信仰 -->
+        <div class="header">
+            <div class="title-section">
+                <h1>王成凯</h1>
+                <div class="badge">电气维保 · 技能架构师</div>
+                <div style="margin-top: 0.8rem; color: #b0e2e9; font-size: 1.1rem;">TEI 电气二部 · 驻HNI/RNI</div>
+            </div>
+            <div class="ethos">
+                <p><span>技术是安全之基</span> · <span>创新是增效之源</span></p>
+                <p style="font-size: 0.95rem; margin-top: 0.4rem;">纵深防御 · 低成本高鲁棒性 · 冗余思维 · 价值共生</p>
+            </div>
+        </div>
+
+        <!-- 核心技能领域：将每一项工作重组为可迁移的专业能力，彻底剥离个人项目经历 -->
+        <div class="skill-architecture">
+            <div class="skill-domain">
+                <div class="domain-icon">⚡</div>
+                <div class="domain-title">精益&SCORE融合</div>
+                <ul class="skill-list">
+                    <li>供电拓扑重构与垂度滑线稳定性设计</li>
+                    <li>PLC深度集成与闭环调节（秒级自启/反馈控制）</li>
+                    <li>软硬协同纵深防御 · 单点失效冗余改造</li>
+                    <li>隐患排查机制与安全培训体系构建</li>
+                </ul>
+                <div style="margin-top: 1rem;"><span class="highlight-tag">故障率压降60%+</span><span class="highlight-tag" style="margin-left: 0.5rem;">零中断保障</span></div>
+            </div>
+            <div class="skill-domain">
+                <div class="domain-icon">🧠</div>
+                <div class="domain-title">技术根因分析</div>
+                <ul class="skill-list">
+                    <li>称重/计量机构设计缺陷对比与迭代</li>
+                    <li>本质安全升级 · 防爆区域零停机改造</li>
+                    <li>低成本自主数据采集方案（WinCC+串口服务器）</li>
+                    <li>C#驱动私有协议解析 · .NET Framework 底层编码</li>
+                </ul>
+                <div style="margin-top: 1rem;"><span class="highlight-tag">成本降低80%+</span><span class="highlight-tag" style="margin-left: 0.5rem;">抗干扰长距离</span></div>
+            </div>
+            <div class="skill-domain">
+                <div class="domain-icon">📊</div>
+                <div class="domain-title">自动化·数字化</div>
+                <ul class="skill-list">
+                    <li>S7直连协议 · 弃用OPC，高时效采集</li>
+                    <li>煤气数据全自动报表架构 (跨系统重构)</li>
+                    <li>自定义打印模板与深度数据整合</li>
+                    <li>称重系统硬件冗余应急箱 · 独立于主控</li>
+                </ul>
+                <div style="margin-top: 1rem;"><span class="highlight-tag">综合效率提升80%</span><span class="highlight-tag" style="margin-left: 0.5rem;">紧急避险</span></div>
+            </div>
+        </div>
+
+        <!-- 技术纵深体系 —— 完全剥离个人“干了什么”，展现技能栈和方法论 -->
+        <div class="competency-deep">
+            <div class="competency-col">
+                <h3><span class="sig-bar"></span> 工控通信与集成</h3>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">MODBUS 串行</span>
+                    <span class="skill-desc">无线测温、综保、煤气报警仪混合组网</span>
+                </div>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">串口服务器</span>
+                    <span class="skill-desc">私有协议驱动编写 · .NET 采集引擎</span>
+                </div>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">WinCC 上位机</span>
+                    <span class="skill-desc">低成本监控方案替代专用PLC模块</span>
+                </div>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">S7 直连</span>
+                    <span class="skill-desc">高性能采集，兼容Windows全平台</span>
+                </div>
+            </div>
+            <div class="competency-col">
+                <h3><span class="sig-bar"></span> 冗余·容错·硬接线</h3>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">软硬协同纵深</span>
+                    <span class="skill-desc">硬接线后备 + 软件冗余，防通讯失效</span>
+                </div>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">应急手动控制箱</span>
+                    <span class="skill-desc">称重系统全独立保障，避免非计划停机</span>
+                </div>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">柴油泵秒级自启</span>
+                    <span class="skill-desc">压力骤降反馈至PLC闭环调速</span>
+                </div>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">防爆区域升级</span>
+                    <span class="skill-desc">零时长停机 · 本质安全替换策略</span>
+                </div>
+            </div>
+            <div class="competency-col">
+                <h3><span class="sig-bar"></span> 系统重构与杠杆</h3>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">皮带秤机构</span>
+                    <span class="skill-desc">四连杆优于单托辊 · 设计迭代能力</span>
+                </div>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">报表底层重构</span>
+                    <span class="skill-desc">吸收现役架构，设计先进采集逻辑</span>
+                </div>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">U型垂度滑线</span>
+                    <span class="skill-desc">电缆拉断顽疾根治 · 高稳定性方案</span>
+                </div>
+                <div class="compact-skill-item">
+                    <span class="skill-meta">无触点点改造</span>
+                    <span class="skill-desc">行车电气、洗车机建设技术沉淀</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 人才与团队：完全剥离具体人名，以“能力传递”方式呈现，突出桥梁型领军技能 -->
+        <div class="value-drivers">
+            <div class="driver-card">
+                <h4>🧰 价值认同 · 技能传递</h4>
+                <div class="driver-taglist">
+                    <span class="driver-tag">本土化技术融合</span>
+                    <span class="driver-tag">国际视野+本地实践</span>
+                    <span class="driver-tag">桥梁型骨干孵化</span>
+                    <span class="driver-tag">实战项目锻打法</span>
+                    <span class="driver-tag">煤气管道/行车无触点</span>
+                    <span class="driver-tag">湿矿洗车机</span>
+                    <span class="driver-tag">操作标准定义者</span>
+                </div>
+                <p style="margin-top: 1.4rem; color: #c3ebf0; font-size: 0.98rem;">从“解决一个问题”到“塑造一批领军者”—— 将隐性知识转化为团队共性资产。</p>
+            </div>
+            <div class="driver-card">
+                <h4>⚙️ 双轮驱动 · 价值共生</h4>
+                <div class="driver-taglist">
+                    <span class="driver-tag">中印技能融合</span>
+                    <span class="driver-tag">文化凝聚力工程</span>
+                    <span class="driver-tag">信念一致 · 能力互补</span>
+                    <span class="driver-tag">卓越维保队伍</span>
+                    <span class="driver-tag">传帮带机制</span>
+                    <span class="driver-tag">自主人才培养</span>
+                </div>
+                <p style="margin-top: 1.4rem; color: #c3ebf0; font-size: 0.98rem;">锻造未来行业标准定义者 —— 不仅仅维修，更定义维保范式。</p>
+            </div>
+        </div>
+
+        <!-- 2026计划: 完全无个人具体任务，聚焦于技能深化、安全共同体与跨文化价值共创 -->
+        <div class="vision-section">
+            <div class="vision-block">
+                <h2>2026 技能精进 · 共同体愿景</h2>
+                <p>以安全环保为底座，构建全员参与的安全共同体；实施中·印员工“价值共生”项目，在技术同频中达成文化互信。 纵深推进低成本高可靠采集架构，持续探索软硬冗余的极限边缘。 目标是成为兼具工程直觉与系统思维的电气维保领军者，并为组织沉淀可复用的技术框架。</p>
+                <div style="margin-top: 1.2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <span style="background: #174f59; padding: 0.3rem 1rem; border-radius: 30px;">SCORE+ 精益深水区</span>
+                    <span style="background: #174f59; padding: 0.3rem 1rem; border-radius: 30px;">硬冗余标准化</span>
+                    <span style="background: #174f59; padding: 0.3rem 1rem; border-radius: 30px;">跨文化技术共识</span>
+                    <span style="background: #174f59; padding: 0.3rem 1rem; border-radius: 30px;">自主诊断平台</span>
+                </div>
+            </div>
+            <div style="display: flex; align-items: flex-end; font-size: 2rem; color: #5faab4;">
+                <span style="border: 2px solid #50b8c4; padding: 0.5rem 1.2rem; border-radius: 60px; font-size: 1rem; font-weight: 600;">2026展望</span>
+            </div>
+        </div>
+
+        <!-- 总结语 完全去除个人具体工作 落脚于技能哲学 -->
+        <div class="signature">
+            <div style="font-weight: 300; max-width: 70%;">坚信“技术是安全之基，创新是增效之源”。持续将突破性技能沉淀为组织常态，以价值驱动定义维保新基线。</div>
+            <div><span>王成凯</span> · 2026.01.05</div>
+        </div>
+        <div class="note-404">
+            ⚡ 本页聚焦电气维保技能体系 · 无个人工作事项罗列 · 纯能力架构
+        </div>
+    </div>
+    <!-- 不需要任何脚本，纯静态技能展示页，可直接通过网址访问 -->
+</body>
+</html>
